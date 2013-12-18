@@ -6,7 +6,7 @@ describe Seeders::Books do
   it 'seeds books' do
     seeded_question = Seeders::Books.books.first
     seeder.seed
-    expect(Book.all.last.title).to eql("best book")
+    expect(Book.where(title: seeded_question[:title])).to be_present
   end
 
   it 'does not create duplicates' do

@@ -3,6 +3,12 @@ class Book < ActiveRecord::Base
     inverse_of: :book,
     dependent: :destroy
 
+  has_many :categorizations,
+    inverse_of: :book,
+    dependent: :destroy
+
+  has_many :categories,
+    through: :categorizations
 
   validates_presence_of :title
   validates_numericality_of :rating, only_integer: true, allow_nil: false,

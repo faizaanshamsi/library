@@ -4,7 +4,7 @@ describe Seeders::Categories do
   let(:seeder) { Seeders::Categories }
 
   it 'seeds categories' do
-    seeded_category = Seeders::Categories.categ.first
+    seeded_category = seeder.categ.first
     seeder.seed
     expect(Category.where(name: seeded_category[:name])).to be_present
   end

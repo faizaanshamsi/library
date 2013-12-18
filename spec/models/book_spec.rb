@@ -10,4 +10,7 @@ describe Book do
 
   it {should have_many(:checkouts).dependent(:destroy) }
 
+  it { should have_many(:categories).through(:categorizations) }
+
+
 end

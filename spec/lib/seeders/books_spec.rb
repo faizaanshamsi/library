@@ -4,9 +4,9 @@ describe Seeders::Books do
   let(:seeder) { Seeders::Books }
 
   it 'seeds books' do
-    seeded_question = Seeders::Books.books.first
+    seeded_book = Seeders::Books.books.first
     seeder.seed
-    expect(Book.where(title: seeded_question[:title])).to be_present
+    expect(Book.where(title: seeded_book[:title])).to be_present
   end
 
   it 'does not create duplicates' do
